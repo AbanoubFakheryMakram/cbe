@@ -9,7 +9,7 @@ import '/core/controllers/exector/executor.dart';
 import '/core/controllers/exector/executor_impl.dart';
 import '../controllers/encryption/encryption_controller.dart';
 import '/core/controllers/device/safe_device_controller.dart';
-import '/core/controllers/device/save_device_controller_impl.dart';
+import '/core/controllers/device/safe_device_controller_impl.dart';
 import '/core/controllers/biometric/biometric_controller.dart';
 import '/core/controllers/biometric/biometric_scontroller_impl.dart';
 import '/core/controllers/permissions/permissions_contoller.dart';
