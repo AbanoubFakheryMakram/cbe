@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import '../http/http_helper.dart';
 import '../../../l10n/app_localization.dart';
-import '../../../widgets/info_doalog.dart';
+import '../../../widgets/info_dialog.dart';
 import '/features/no_internet_connection/presentation/pages/no_internet_connection_page.dart';
 import '/core/controllers/dialogs/dialog_controller.dart';
 import '/core/controllers/network/network_info.dart';

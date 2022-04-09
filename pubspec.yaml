@@ -34,7 +34,6 @@ dependencies:
   # Icons
   font_awesome_flutter: ^9.1.0
   # Responsive framework
-  responsive_framework: 0.1.4
   # Network Images
   cached_network_image: ^3.2.0
   # Date Formatting

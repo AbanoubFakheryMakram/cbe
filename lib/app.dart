@@ -7,9 +7,6 @@ import '/features/device_not_save/device_not_save_page.dart';
 import 'core/controllers/settings/settings_controller.dart';
 import '/features/users/presentation/pages/users_page.dart';
 import 'utils/constants/app_theme.dart';
-import 'package:responsive_framework/responsive_framework.dart';
-
-import 'utils/constants/app_sizes.dart';
 import 'core/controllers/navigation/navigation_controller.dart';
 import 'widgets/custom_scroll_behavior.dart';
 
@@ -32,10 +29,7 @@ class MyApp extends ConsumerWidget {
       builder: (context, child) {
         return ScrollConfiguration(
           behavior: CustomScrollBehavior(),
-          child: ResponsiveWrapper.builder(
-            ClampingScrollWrapper.builder(context, child!),
-            breakpoints: AppSizes.breakpoints,
-          ),
+          child: child!,
         );
       },
       home: Scaffold(

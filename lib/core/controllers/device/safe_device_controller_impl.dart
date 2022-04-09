@@ -22,14 +22,12 @@ class SafeDeviceControllerImpl implements SafeDeviceController {
     return await SafeDevice.isRealDevice;
   }
 
-  @override
-  Future<bool> canRunTheAppOnThisDevice() async {
-    if (!kReleaseMode) {
-      return (!await isDeviceJailbroken());
-    } else {
-      return (!await isDeviceJailbroken()) &&
-          (await isSafeDevice()) &&
-          (await isRealDevice());
+    @override
+    Future<bool> canRunTheAppOnThisDevice() async {
+      if (kReleaseMode) {
+        return (await isRealDevice()) && (!await isDeviceJailbroken());
+      } else {
+        return true;
+      }
     }
-  }
 }

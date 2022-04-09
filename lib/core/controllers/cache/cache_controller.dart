@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import '../../../utils/constants/sharedpreferences_keys.dart';
+import '../../../utils/constants/storage_keys.dart';
 import '../../models/responses/token.dart';
 
 class CacheController {
@@ -11,23 +11,23 @@ class CacheController {
   CacheController(this.storage);
 
   void saveCurrentTheme(String themeName) {
-    storage.write(key: SharedPreferencesKeys.theme, value: themeName);
+    storage.write(key: StorageKeys.theme, value: themeName);
   }
 
   Future<String?> loadCurrentTheme() async {
-    return await storage.read(key: SharedPreferencesKeys.theme);
+    return await storage.read(key: StorageKeys.theme);
   }
 
   void saveCurrentLanguage(String langCode) {
-    storage.write(key: SharedPreferencesKeys.language, value: langCode);
+    storage.write(key: StorageKeys.language, value: langCode);
   }
 
   Future<String?> loadCurrentLanguage() async {
-    return await storage.read(key: SharedPreferencesKeys.language);
+    return await storage.read(key: StorageKeys.language);
   }
 
   void saveToken(Token token) {
-    storage.write(key: SharedPreferencesKeys.token, value: json.encode(token.toJson()));
+    storage.write(key: StorageKeys.token, value: json.encode(token.toJson()));
   }
 
   Token? getToken() {
