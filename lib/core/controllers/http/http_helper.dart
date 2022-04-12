@@ -125,7 +125,6 @@ class HttpHelper {
     } else {
       switch (response.statusCode) {
         case 200:
-        case 201:
           return response;
         case 500:
           return InternalServerErrorFailure(msg: AppLocalization.translation.genericError);

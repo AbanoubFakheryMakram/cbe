@@ -1,39 +1,12 @@
 
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import '../core/error/failure.dart';
 import 'dart:math' as math;
 
 class AppUtils {
-  static String buildErrorMsg(Failure failure) {
-    log('failure: $failure');
-    if(failure is CustomFailure) return failure.data;
-    if(failure is NoInternetConnectionFailure) {
-      return 'no_internet_connection';
-    } else if(failure is InternalServerErrorFailure) {
-      return 'internal_server_error';
-    } else if(failure is UnauthorizedFailure) {
-      return 'not_authorized';
-    } else if(failure is NotFoundFailure) {
-      return 'not_found';
-    } else if(failure is MethodNotAllowedFailure) {
-      return 'method_not_allowed';
-    } else if(failure is ConnectionTimeoutFailure) {
-      return 'connection_timeout';
-    } else if(failure is BadRequestFailure) {
-      return 'bad_request';
-    } else if(failure is HttpFailure) {
-      return 'http_exception';
-    } else if(failure is FormatFailure) {
-      return 'format_exception';
-    } else {
-      return 'unknown_error';
-    }
-  }
 
-  static hideKeyboard(BuildContext context) {
-    FocusScope.of(context).requestFocus(FocusNode());
+  static hideKeyboard() {
+    FocusManager.instance.primaryFocus?.unfocus();
   }
 
   static void showSnakeBar(BuildContext context, String msg) {

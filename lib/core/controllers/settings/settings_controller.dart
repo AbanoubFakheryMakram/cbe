@@ -3,12 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../language/language_controller.dart';
+import '../theme/theme_controller.dart';
 import '/core/controllers/device/safe_device_controller.dart';
 import '/utils/constants/enums/app_them_mode_enum.dart';
-
-import '../theme/theme_controller.dart';
 import '../../base/service_locator.dart';
-import '../language/language_controller.dart';
 
 final settingsController = ChangeNotifierProvider((_) => serviceLocator<SettingsController>());
 
@@ -35,10 +34,10 @@ class SettingsController with ChangeNotifier {
     _canRunOnThisDevice = await serviceLocator<SafeDeviceController>().canRunTheAppOnThisDevice();
 
     // load theme
-    _themeMode = serviceLocator<ThemeController>().currentThemeMode;
+    _themeMode = serviceLocator<ThemeController>().getCurrentThemeMode();
 
     // load system locale
-    _locale = serviceLocator<LanguageController>().langCode;
+    _locale = serviceLocator<LanguageController>().getLangCode();
 
     await initWebViewConfiguration();
 

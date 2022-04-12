@@ -10,7 +10,7 @@ class LoadingOverlay extends StatefulWidget {
   final Color overlayColor = AppColors.white;
   final Widget progressIndicator;
 
-  LoadingOverlay({Key? key,
+  const LoadingOverlay({Key? key,
     required this.isLoading,
     required this.child,
     this.opacity = 0.5,

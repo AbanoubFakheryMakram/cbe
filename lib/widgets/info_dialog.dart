@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../l10n/app_localization.dart';
-import '../utils/constants/app_assets.dart';
 
 class InfoDialog extends StatelessWidget {
   final String? title;
@@ -28,12 +27,6 @@ class InfoDialog extends StatelessWidget {
             child: Text(title ?? '', style: const TextStyle()),
           ),
           const Spacer(flex: 1),
-          // InkWell(
-          //   onTap: () {
-          //     Navigator.pop(context);
-          //   },
-          //   child: Image.asset(AppAssets.close),
-          // )
         ],
       ),
       Padding(
