@@ -26,9 +26,9 @@ class HttpControllerImpl implements HttpController {
   }
 
   @override
-  Future<Response> post(String url, request, {RequestData? requestData}) async {
+  Future<Response> post(String url, requestBody, {RequestData? requestData}) async {
     handleCustomRequestData(requestData);
-    Response response = await dio.post(url, data: request);
+    Response response = await dio.post(url, data: requestBody);
     return response;
   }
 
@@ -40,23 +40,23 @@ class HttpControllerImpl implements HttpController {
   }
 
   @override
-  Future<Response> put(String url, Map<String, dynamic> request, {RequestData? requestData}) async {
+  Future<Response> put(String url, Map<String, dynamic> requestBody, {RequestData? requestData}) async {
     handleCustomRequestData(requestData);
-    Response response = await dio.put(url, data: request);
+    Response response = await dio.put(url, data: requestBody);
     return response;
   }
 
   @override
-  Future<Response> patch(String url, Map<String, dynamic> request, {RequestData? requestData}) async {
+  Future<Response> patch(String url, Map<String, dynamic> requestBody, {RequestData? requestData}) async {
     handleCustomRequestData(requestData);
-    Response response = await dio.patch(url, data: request);
+    Response response = await dio.patch(url, data: requestBody);
     return response;
   }
 
   @override
-  Future<Response> postWithFile(String url, request, {RequestData? requestData}) async {
+  Future<Response> postWithFile(String url, requestBody, {RequestData? requestData}) async {
     handleCustomRequestData(requestData);
-    Response response = await dio.post(url, data: FormData.fromMap(request));
+    Response response = await dio.post(url, data: FormData.fromMap(requestBody));
     return response;
   }
 
